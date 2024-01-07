@@ -1,0 +1,47 @@
+{
+  "name": "alejandro-yakovlev/collaborative-filtering",
+  "type": "library",
+  "description": "PHP implementation of the rating-based collaborative filtering.",
+  "keywords": [],
+  "homepage": "https://github.com/alejandro-yakovlev/collaborative-filtering",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alejandro Yakovlev",
+      "email": "yakovlevalejandro@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "markrogoyski/math-php": "^2.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "ColFil\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ColFil\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "pestphp/pest": "^2.30",
+    "phpstan/phpstan": "^1.10",
+    "friendsofphp/php-cs-fixer": "^3.46"
+  },
+  "scripts": {
+    "test": "vendor/bin/pest --colors=always",
+    "analyse": "vendor/bin/phpstan analyse --ansi --debug",
+    "php-cs-fixer": [
+      "php-cs-fixer fix src --rules=@PSR2",
+      "php-cs-fixer fix tests --rules=@PSR2"
+    ]
+  },
+  "minimum-stability": "stable",
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}

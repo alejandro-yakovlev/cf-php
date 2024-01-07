@@ -1,0 +1,19 @@
+parameters:
+
+    level: max
+
+    paths:
+        - src
+        - tests
+
+    checkMissingIterableValueType: false
+    reportUnmatchedIgnoredErrors: true
+
+    ignoreErrors:
+
+        # Pest implicitly binds $this to the current test case
+        # @see https://pestphp.com/docs/underlying-test-case
+        -
+            message: '#^Undefined variable: \$this$#'
+            paths:
+                - tests/*
