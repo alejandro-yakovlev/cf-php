@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ColFil;
+namespace CFPHP;
 
-class CFUser
+class User
 {
     /**
      * @param array<string, float> $items
@@ -13,11 +13,6 @@ class CFUser
         public readonly string $userId,
         public array $items = []
     ) {
-    }
-
-    public function isEqualTo(CFUser $otherUser): bool
-    {
-        return $this->userId === $otherUser->userId;
     }
 
     /**
