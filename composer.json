@@ -1,9 +1,9 @@
 {
-  "name": "alejandro-yakovlev/collaborative-filtering",
+  "name": "alejandro-yakovlev/cf-php",
   "type": "library",
   "description": "PHP implementation of the rating-based collaborative filtering.",
   "keywords": [],
-  "homepage": "https://github.com/alejandro-yakovlev/collaborative-filtering",
+  "homepage": "https://github.com/alejandro-yakovlev/cf-php",
   "license": "MIT",
   "authors": [
     {
