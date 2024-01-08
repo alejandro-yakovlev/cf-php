@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace ColFil\SimStrategy;
+namespace CFPHP\SimilarityStrategy;
 
-use ColFil\SimStrategyInterface;
+use CFPHP\SimilarityStrategyInterface;
 use MathPHP\Statistics\Distance;
 
-class CosSimStrategy implements SimStrategyInterface
+class CosineSimilarityStrategy implements SimilarityStrategyInterface
 {
     public function simDistance(array $v1, array $v2): float
     {

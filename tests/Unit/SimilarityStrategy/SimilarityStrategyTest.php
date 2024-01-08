@@ -1,6 +1,7 @@
 <?php
 
-use ColFil\SimStrategy\CosSimStrategy;
+use CFPHP\SimilarityStrategy\CosineSimilarityStrategy;
+use CFPHP\SimilarityStrategy\EuclideanSimilarityStrategy;
 
 beforeEach(function () {
     $this->dataset = [
@@ -32,8 +33,15 @@ beforeEach(function () {
 });
 
 it('cosine similarity strategy', function () {
-    $strategy = new CosSimStrategy();
+    $strategy = new CosineSimilarityStrategy();
     $v1 = array_intersect_key($this->dataset['Senior'], $this->dataset['Middle']);
     $v2 = array_intersect_key($this->dataset['Middle'], $this->dataset['Senior']);
     expect($strategy->simDistance($v1, $v2))->toBe(0.966250377775183);
+});
+
+it('euclidean similarity strategy', function () {
+    $strategy = new EuclideanSimilarityStrategy();
+    $v1 = array_intersect_key($this->dataset['Senior'], $this->dataset['Middle']);
+    $v2 = array_intersect_key($this->dataset['Middle'], $this->dataset['Senior']);
+    expect($strategy->simDistance($v1, $v2))->toBe(2.6457513110645907);
 });

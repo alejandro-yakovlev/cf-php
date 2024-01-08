@@ -1,8 +1,8 @@
 <?php
 
-use ColFil\CFStrategy\UserBasedCFStrategy;
-use ColFil\CFUser;
-use ColFil\SimStrategy\CosSimStrategy;
+use CFPHP\RecommendationStrategy\UserBasedRecommendationStrategy;
+use CFPHP\SimilarityStrategy\CosineSimilarityStrategy;
+use CFPHP\User;
 
 beforeEach(function () {
     $this->dataset = [
@@ -33,11 +33,11 @@ beforeEach(function () {
     ];
 });
 
-it('cosine similarity strategy', function () {
+it('user based strategy', function () {
     $users = [];
     foreach ($this->dataset as $userId => $items) {
-        $users[$userId] = new CFUser($userId, $items);
+        $users[$userId] = new User($userId, $items);
     }
-    $strategy = new UserBasedCFStrategy($users, new CosSimStrategy());
-    expect(count($strategy->getRecommendations('Middle', 1, 10)))->toBe(3);
+    $strategy = new UserBasedRecommendationStrategy($users, new CosineSimilarityStrategy());
+    expect(count($strategy->getRecommendations('Middle')))->toBe(3);
 });
